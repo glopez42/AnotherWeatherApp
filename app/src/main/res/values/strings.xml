@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">AnotherWeatherApp</string>
+    <string name="app_name">Another Weather App</string>
+    <string name="no_city">No city selected, add one with the button below.</string>
 </resources>
