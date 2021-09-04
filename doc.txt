@@ -1,0 +1,8 @@
+Decisiones de diseño
+
+04-09-21
+Se usará OpenWeather para sacar el tiempo, en concreto las API de Current Weather Data, One Call API y 5 day / 3 hour forecast.
+Las llamadas a One Call API se reducirán guardandolas de manera persistente junto a la hora a la que se ha accedido. Si se intenta llamar en menos de una hora, no se vuelve a llamar.
+En Current Weather lo mismo, de momento.
+La pantalla principal mostrará la primera ciudad guardada, y si no hay ninguna, un mensaje.
+

@@ -12,7 +12,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
         //Temporal array of cities
         var cities = arrayListOf<String>("Valdemoro", "Ibiza", "Titulcia", "Madrid")
@@ -21,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         //Show a message if there is not a city selected
         var noCityMessage: TextView = findViewById<EditText>(R.id.noCityText)
         if (!citySelected){
+            setContentView(R.layout.no_cities)
             noCityMessage.setText(R.string.no_city)
         } else {
             noCityMessage.visibility = View.INVISIBLE

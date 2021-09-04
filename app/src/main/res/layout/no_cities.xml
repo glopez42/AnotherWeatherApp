@@ -38,38 +38,4 @@
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <LinearLayout
-        android:layout_width="412dp"
-        android:layout_height="609dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="193dp"
-                android:layout_height="56dp"
-                android:fontFamily="@font/montserrat"
-                android:text="Valdemoro,Es"
-                android:textColor="#000000"
-                android:textSize="20sp" />
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:layout_editor_absoluteX="249dp"
-                tools:layout_editor_absoluteY="0dp"
-                tools:srcCompat="@tools:sample/avatars" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
