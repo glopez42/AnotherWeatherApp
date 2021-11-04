@@ -34,7 +34,7 @@
             android:id="@+id/textView2"
             android:layout_width="112dp"
             android:layout_height="711dp"
-            android:text="TextView"
+            android:text="sdsdsd"
             tools:layout_editor_absoluteX="149dp"
             tools:layout_editor_absoluteY="1367dp" />
 
@@ -105,9 +105,15 @@
             android:id="@+id/feels_like_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="117dp"
+            android:layout_marginBottom="67dp"
             android:text="Feels like:"
-            tools:layout_editor_absoluteX="213dp"
-            tools:layout_editor_absoluteY="254dp" />
+            app:layout_constraintBottom_toTopOf="@+id/status"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.57"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/updated"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/updated"
@@ -124,13 +130,16 @@
             android:id="@+id/textView14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="175dp"
+            android:layout_marginBottom="120dp"
             android:text="28º"
             android:textAlignment="center"
             android:textSize="34sp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView3"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.854"
+            app:layout_constraintHorizontal_bias="0.806"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="228dp" />
+            app:layout_constraintTop_toBottomOf="@+id/include" />
 
         <TextView
             android:id="@+id/status"
