@@ -6,3 +6,6 @@ Las llamadas a One Call API se reducirán guardandolas de manera persistente jun
 En Current Weather lo mismo, de momento.
 La pantalla principal mostrará la primera ciudad guardada, y si no hay ninguna, un mensaje.
 
+05-11-21
+La pantalla principal mostrará todas las ciudades guardadas, y si no hay ninguna, un mensaje.
+
