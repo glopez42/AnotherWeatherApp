@@ -12,7 +12,9 @@
 
     <include
         android:id="@+id/include"
-        layout="@layout/floating_button_layout" />
+        layout="@layout/floating_button_layout"
+        tools:layout_editor_absoluteX="127dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <TextView
         android:id="@+id/no_city_text"

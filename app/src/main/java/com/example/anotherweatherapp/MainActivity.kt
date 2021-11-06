@@ -13,35 +13,30 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.anotherweatherapp.DataBaseHelper.bbdd.baseObject.CITY_NAME
 import com.example.anotherweatherapp.DataBaseHelper.bbdd.baseObject.TABLE_NAME
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import android.content.Intent
+
+
+
 
 class MainActivity : AppCompatActivity() {
 
-    private var dbHelper: DataBaseHelper = DataBaseHelper(this)
+    var dbHelper: DataBaseHelper = DataBaseHelper(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         var cities: ArrayList<String> = getCities()
-
-
-        //search city button
-
-        setContentView(R.layout.add_city)
-        var searchButton: Button = findViewById<Button>(R.id.button_search)
-        searchButton.setOnClickListener {
-            var cityName: TextView = findViewById<TextView>(R.id.enter_city_edit_text)
-            addCity(cityName.text.toString())
-
-        }
+        setContentView(R.layout.no_cities)
 
         //floating button action when clicked
-        setContentView(R.layout.floating_button_layout)
-        var addCityButton: FloatingActionButton = findViewById<FloatingActionButton>(R.id.fab)
+        setContentView(R.layout.no_cities)
+        val addCityButton: FloatingActionButton = findViewById<FloatingActionButton>(R.id.fab)
         addCityButton.setOnClickListener {
-            setContentView(R.layout.add_city)
+            val myIntent = Intent(this, SearchActivity::class.java)
+            //myIntent.putExtra("db", value)
+            startActivity(myIntent)
         }
 
-        setContentView(R.layout.no_cities)
 
         //Show a message if there is not a city selected
         var noCityMessage: TextView = findViewById<TextView>(R.id.no_city_text)
@@ -80,28 +75,11 @@ class MainActivity : AppCompatActivity() {
 
         with(cursor) {
             while (moveToNext()) {
-                val itemId = getString(getColumnIndexOrThrow(BaseColumns._ID))
+                val itemId = getString(getColumnIndexOrThrow(CITY_NAME))
                 cities.add(itemId)
             }
         }
         return cities
-    }
-
-    fun addCity(name: String): Boolean {
-        var done = false
-
-        // Gets the data repository in write mode
-        val db = dbHelper.writableDatabase
-
-        // Create a new map of values, where column names are the keys
-        val values = ContentValues().apply {
-            put(CITY_NAME, name)
-        }
-
-        // Insert the new row, returning the primary key value of the new row
-        val newRowId = db?.insert(TABLE_NAME, null, values)
-
-        return done
     }
 
 }

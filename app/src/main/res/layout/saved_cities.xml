@@ -9,10 +9,6 @@
         android:id="@+id/include"
         layout="@layout/toolbar" />
 
-    <include
-        android:id="@+id/include"
-        layout="@layout/floating_button_layout" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rec_View"
         android:layout_width="411dp"
