@@ -5,6 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.content.Intent
+
+
+
 
 class SearchActivity : AppCompatActivity() {
 
@@ -18,7 +22,8 @@ class SearchActivity : AppCompatActivity() {
         searchButton.setOnClickListener {
             var cityName: TextView = findViewById<TextView>(R.id.enter_city_edit_text)
             addCity(cityName.text.toString())
-
+            val returnBtn = Intent(applicationContext, MainActivity::class.java)
+            startActivity(returnBtn)
         }
 
 

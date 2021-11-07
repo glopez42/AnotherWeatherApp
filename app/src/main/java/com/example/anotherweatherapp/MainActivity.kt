@@ -26,17 +26,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         var cities: ArrayList<String> = getCities()
-        setContentView(R.layout.no_cities)
 
         //floating button action when clicked
         setContentView(R.layout.no_cities)
-        val addCityButton: FloatingActionButton = findViewById<FloatingActionButton>(R.id.fab)
-        addCityButton.setOnClickListener {
-            val myIntent = Intent(this, SearchActivity::class.java)
-            //myIntent.putExtra("db", value)
-            startActivity(myIntent)
-        }
-
+        setAddButton()
 
         //Show a message if there is not a city selected
         var noCityMessage: TextView = findViewById<TextView>(R.id.no_city_text)
@@ -46,6 +39,7 @@ class MainActivity : AppCompatActivity() {
 
             noCityMessage.visibility = View.INVISIBLE
             setContentView(R.layout.saved_cities)
+            setAddButton()
 
             val recyclerView = findViewById<RecyclerView>(R.id.rec_View)
             val myAdapter = MyAdapter(this, cities)
@@ -56,7 +50,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun getCities(): ArrayList<String> {
+    private fun getCities(): ArrayList<String> {
         var cities = arrayListOf<String>()
         var dbRead = dbHelper.readableDatabase
 
@@ -80,6 +74,15 @@ class MainActivity : AppCompatActivity() {
             }
         }
         return cities
+    }
+
+    private fun setAddButton(){
+        val addCityButton: FloatingActionButton = findViewById<FloatingActionButton>(R.id.fab)
+        addCityButton.setOnClickListener {
+            val myIntent = Intent(this, SearchActivity::class.java)
+            //myIntent.putExtra("db", value)
+            startActivity(myIntent)
+        }
     }
 
 }

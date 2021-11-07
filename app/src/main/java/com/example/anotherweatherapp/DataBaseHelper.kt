@@ -30,14 +30,15 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
 
     }
-
+/*
     override fun onOpen(db: SQLiteDatabase?) {
         if (db != null) {
             db.execSQL(SQL_DELETE_ENTRIES)
             db.execSQL(SQL_CREATE_ENTRIES)
         }
-
     }
+
+ */
 
     companion object {
         // Common object for all the instances
